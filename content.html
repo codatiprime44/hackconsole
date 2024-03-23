@@ -1,0 +1,210 @@
+﻿<!DOCTYPE  HTML PUBLIC "-//W3C//DTDHTML4.01Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+	<head>
+
+		<link href="style.css" rel="stylesheet">
+		<link rel="stylesheet" href="bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!--[if IE]>
+									  		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+										<![endif]-->
+		<script>
+			document.documentElement.className = 'js';
+		</script>
+		<script src="ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="terminal.js"></script>
+        <style>
+        body {
+            background-image: url('console2.png');
+            background-size: cover;
+            }
+        </style>
+	</head>
+
+	<body class="demo-11">
+
+		<div class="container">
+
+			<div class="search search--open">
+
+				<div align="center">
+					<input size="50" class="search__input" id='number' type="text" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Введите ваш порядковый номер..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			</div>
+
+			<br><br><br><br><button id="startButton" onclick="terminal1()" class="button">Start</button>
+
+			<div>
+				<h2 id='connectH2'></h2>
+			</div>
+
+			<div class="terminal1"></div>
+
+			<div class="connect1">
+				<h2 id='connect1H2'></h2>
+			</div>
+			<div class="terminal2"></div>
+			<button id="redirectButton" onclick="redirect()" class="button">Start</button>
+		</div>
+	</div></body>
+</html><script>document.getElementById('redirectButton').style.visibility = 'hidden';
+const createElement = (tag, className) => {
+const element = document.createElement(tag);
+element.classList.add(className);
+return element
+}
+function getRandomIntInclusive(min, max) {
+min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+$("#startButton").hide();
+$("#number").keyup(function() {
+  if ($(this).val().length == 4 ) {
+    $("#startButton").show();
+  } else {
+    $("#startButton").hide();
+  }
+});
+
+
+function random() {
+var randomCount = createElement('h2', 'terminal__line');
+randomCount.innerHTML = 'Найдено ' + getRandomIntInclusive(10, 50) + ' уязвимостей';
+return randomCount;
+}
+
+function random2() {
+var randomCount = createElement('h2');
+randomCount.innerHTML = 'Вероятность выигрыша ' + getRandomIntInclusive(90, 99) + '% !!!...';
+return randomCount;
+}
+
+
+function terminal1() {
+var numberIntut = document.getElementById('number');
+
+if (!numberIntut.value || numberIntut.value.length !== 4 ) {
+	alert("Порядковый номер содержит не менее 4 символов!")
+return
+} else {
+const containerText = document.querySelector('.terminal1');
+
+numberIntut.style.visibility = 'hidden';
+var startButton = document.getElementById('startButton')
+startButton.classList.add('button-hide');
+
+var header = document.getElementById('header')
+
+const min = 0,
+max = 100,
+time = 7050;
+
+(function step(val) {
+setTimeout(function () {
+var terminal1 = createElement('h2');
+terminal1 = 'Сonnect to 1win ' + val + '%';
+document.getElementById('connectH2').innerHTML = terminal1;
+if (val < max) {
+step(val + 1);
+}
+}, time / (max - min));
+})(min);
+
+const terminal1 = createElement('p', 'terminal__line');
+terminal1.innerHTML = '*****************************************************************';
+
+const terminal2 = createElement('p', 'terminal__line');
+terminal2.innerHTML = 'Shyne1x hack program by 1win v 2.34';
+
+const terminal3 = createElement('p', 'terminal__line');
+terminal3.innerHTML = '*****************************************************************';
+
+const terminal4 = createElement('p', 'terminal__line');
+terminal4.innerHTML = 'Dependency Installed:fail2ban-server.noarch 0:0.11.1-10.el7 systemd-python.x86_64 0:219-73.el7_8.9';
+
+const terminal5 = createElement('p', 'terminal__line');
+terminal5.innerHTML = 'head -c 100 /dev/random | md5 | tail -c9';
+
+const terminal6 = createElement('p', 'terminal__line');
+terminal6.innerHTML = 'head -c 100 /dev/urandom | base64 | sed s/[+=/A-Z]';
+
+const terminal7 = createElement('p', 'terminal__line');
+terminal7.innerHTML = 'test@linoxide:~/Downloads$ cd -';
+
+const terminal8 = createElement('p', 'terminal__line');
+terminal8.innerHTML = 'Installed: coremanager-pkg-fail2ban.x86_64 0:5.267.1-2.el7';
+
+
+containerText.append(terminal1);
+containerText.append(terminal2);
+containerText.append(terminal3);
+containerText.append(terminal4);
+containerText.append(terminal5);
+containerText.append(terminal6);
+containerText.append(terminal7);
+containerText.append(terminal8);
+
+setTimeout(terminalView, 8000);
+}
+};
+
+
+function terminalView() {
+const containerText = document.querySelector('.terminal2');
+
+const min = 0,
+max = 100,
+time = 3500;
+
+(function step(val) {
+setTimeout(function () {
+var terminal1 = createElement('h2');
+terminal1 = 'Поиск уязвимостей ' + val + '%';
+document.getElementById('connect1H2').innerHTML = terminal1;
+if (val < max) {
+step(val + 1);
+}
+}, time / (max - min));
+})(min);
+
+const terminal1 = createElement('p', 'terminal__line');
+terminal1.innerHTML = 'Installed: coremanager-pkg-fail2ban.x86_64 0:5.267.1-2.el7';
+
+const terminal2 = createElement('p', 'terminal__line');
+terminal2.innerHTML = '0:0.11.1-10.el7 systemd-python.x86_64 0:219-73.el7_8.9';
+
+const terminal3 = createElement('p', 'terminal__line');
+terminal3.innerHTML = 'Dependency Installed:fail2ban-server.noarch 0:0.11.1-10.el7';
+
+const terminal4 = createElement('p', 'terminal__line');
+terminal4.innerHTML = 'Dependency Installed:fail2ban-server.noarch 0:0.11.1-10.el7 systemd-python.x86_64 0:219-73.el7_8.9';
+
+const terminal5 = createElement('p', 'terminal__line');
+terminal5.innerHTML = 'head -c 100 /dev/random | md5 | tail -c9';
+
+const terminal6 = createElement('p', 'terminal__line');
+terminal6.innerHTML = 'Рассчитываем вероятность выигрыша...';
+
+const terminal7 = createElement('h2', 'terminal__line');
+terminal7.innerHTML = 'Вероятность выигрыша 90-99% !!!...';
+
+const terminal8 = createElement('p', 'terminal__line');
+terminal8.innerHTML = 'Installed: coremanager-pkg-fail2ban.x86_64 0:5.267.1-2.el7';
+
+
+containerText.append(terminal1);
+containerText.append(terminal2);
+containerText.append(terminal3);
+containerText.append(terminal4);
+containerText.append(terminal5);
+containerText.append(terminal8);
+containerText.append(random());
+setTimeout(() => {
+containerText.append(random2())
+}, 5500);;
+setTimeout("document.getElementById('redirectButton').style.visibility = 'visible'", 7000);
+};
+
+function redirect() {
+    window.parent.location.href = "https://1wrcna.life/casino/play/1play_1play_luckyjet"; // здесь ваствалть ссылку
+}</script>
